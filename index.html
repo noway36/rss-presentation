@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <title>TypeScript</title>
+
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/reveal.css" />
+        <link rel="stylesheet" href="css/theme/black.css" />
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/monokai.css" />
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h2>TypeScript</h2>
+                    <p style="color: #ffa700">JavaScript that scales.</p>
+                </section>
+                <section>
+                    <section>
+                        <h2>What is TypeScript?</h2>
+                        <p style="color: yellow">
+                            TypeScript is JavaScript for application-scale development.
+                        </p>
+                        <h4><span style="color:#42affa">Language</span> and a <span style="color: #42affa;">set of tools</span></h3>
+                    </section>
+                    <section style="top: 25%">
+                        <h3>Typescript is a <span style="color:red">superset</span> of Javascript</h3>
+                        <h4 style="color:#a5e7ff">Starts with JavaScript and ends with JavaScript</h4>
+                        <img src="img/typescript1.png" style="height: 500px; width: 500px" />
+					</section>
+					<section>
+						<h2>Brief History</h2>
+						<p style="font-size: 34px">TypeScript was launched for public use in October 2012</p>
+						<p>Creator - <span style="color:#a5e7ff">Anders Hejlsberg</span></p>
+					</section>
+				</section>
+				<section>
+					<h2>Features</h2>
+					<ul>
+						<li>It's just JavaScript.</li>
+						<li>Supports other JS libraries.</li>
+						<li>JavaScript is TypeScript.</li>
+						<li>It's portable.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Benefits Of Using</h2>
+					<ul>
+						<li>Classes</li>
+						<li>Modules</li>
+						<li>Type-checking</li>
+						<li>ES6 features</li>
+						<li>OOP concepts</li>
+						<li>And a lot more</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>Type System</h2>
+						<p>JavaScript is a <span style="color: red">weakly typed</span> language.</p>
+						<q>This is both a blessing and a curse.</q>
+					</section>
+					<section>
+						<h2>JavaScript Example</h2>
+						<pre>
+							<code>
+function sum(a, b) {
+	return a+b;
+}
+
+sum(4, 2); // Ok
+sum(4, 'Two'); // Not ok, but there is no error
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>TypeScript example</h2>
+						<pre>
+							<code>
+function sum(a: number, b: number): number {
+	return a+b;
+}
+
+sum(4, 2); // Ok
+sum(4, 'Two'); // Error!
+							</code>
+						</pre>
+					</section>
+					<section>
+						<p style="font-size: 34px; color: #ffa700">Primitive data types</p>
+						<pre>
+							<code>
+let num: number = 1;
+let str: string = "Hello World";
+let bool: boolean = false;
+let n: null = null;
+let undf: undefined = undefined;
+							</code>
+					</pre>
+					</section>
+					<section>
+						<p style="font-size: 34px; color: #ffa700">Arrays</p>
+						<pre>
+							<code>
+const boolArray: boolean = [true, false];
+boolArray[1] = true; // Ok
+boolArray[1] = 'true'; // Error!
+
+const numArray: number = [0, 1];
+numArray[1] = 42; // Ok
+numArray[1] = true; // Error!
+							</code>
+						</pre>
+					</section>
+					<section>
+						<p style="font-size: 34px; color: #ffa700">Tuple</p>
+						<pre>
+							<code>
+const arr: [string, number];
+arr = ['hello', 10]; // Ok
+arr = [10, 'hello']; // Error;
+							</code>
+						</pre>
+					</section>
+					<section>
+						<p style="font-size: 34px; color: #ffa700">Any</p>
+						<pre>
+							<code>
+let notSure: any = 2019;
+let list: any[] = [1, true, "free"];
+							</code>
+						</pre>
+						<p style="font-size: 34px; color: #ffa700">Void</p>
+						<pre>
+							<code>
+function warnUser(): void {
+	console.log("This is my warning message");
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<p style="font-size: 34px; color: #ffa700">Interfaces</p>
+						<pre>
+							<code style="max-height: none">
+interface MyObject {
+	a?: number;
+	b: string;
+}
+const obj: MyObject = { // Ok
+	a: 3,
+	b: 'lavel',
+}
+const obj: MyObject = { // Ok
+	b: 'lavel'
+}
+const obj: MyObject = { // Error
+	a: '3',
+	b: 42
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<p style="font-size: 34px; color: #ffa700">Classes can implement interfaces</p>
+						<pre>
+							<code>
+interface Point {
+	x: number;
+	y: number;
+}
+
+class MyPoint implements Point {
+	x: number;
+	y; number;
+}
+							</code>
+						</pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Object Oriented Programming With TypeScript</h2>
+					</section>
+					<section>
+						<h2>Simple class-based example</h2>
+						<pre>
+							<code>
+class Greeter {
+	greeting: string;
+	constructor(message: string) {
+		this.greeting = message;
+	}
+	greet() {
+		return "Hello, " + this.greeting;
+	}
+}
+
+let greeter = new Greeter("world");
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Inheritance</h2>
+						<pre>
+							<code style="max-height: 500px;">
+class Animal {
+	move(distanceInMeters: number = 0) {
+		console.log(`Animal moved ${distanceInMeters}m.`);
+	}
+}
+
+class Dog extends Animal {
+	bark() {
+		console.log('Woof! Woof!');
+	}
+}
+
+const dog = new Dog();
+dog.bark();
+dog.move(10);
+dog.bark();
+							</code>
+						</pre>
+					</section>
+					<section>
+						<p style="font-size: 34px; color: #ffa700">Public</p>
+						<pre style="width: 100%;">
+							<code>
+class Animal {
+	public name: string;
+	public constructor(theName: string) {
+		this.name = theName;
+	}
+	public move(distanceInMeters: number) {
+		console.log(`${this.name} moved ${distanceInMeters}m.`);
+	}
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<p style="font-size: 34px; color: #ffa700">Private</p>
+						<pre>
+							<code>
+class Animal {
+	private name: string;
+	constructor(theName: string) { this.name = theName; }
+}
+
+new Animal("Cat").name; // Error: 'name' is private;
+							</code>
+						</pre>
+					</section>
+					<section>
+						<p style="font-size: 34px; color: #ffa700">Protected</p>
+						<pre>
+							<code style="max-height: 560px;">
+class Person {
+	protected name: string;
+	constructor(name: string) { this.name = name; }
+}
+class Employee extends Person {
+	private department: string;
+	constructor(name: string, department: string) {
+		super(name);
+		this.department = department;
+	}
+	public getElevatorPitch() {
+		return `Hello, my name is ${this.name}
+		and I work in ${this.department}.`;
+	}
+}
+let howard = new Employee("Howard", "Sales");
+console.log(howard.getElevatorPitch()); // Ok
+console.log(howard.name); // Error
+							</code>
+						</pre>
+					</section>
+					<section>
+						<p style="font-size: 34px; color: #ffa700">Readonly Properties</p>
+						<pre>
+							<code>
+interface Point = {
+	readonly x: number;
+	readonly y: number;
+};
+
+const myPoint: Point {
+	x: 5,
+	y: 5
+}
+
+myPoint.x = 128; // Error!
+							</code>
+						</pre>
+					</section>
+					<section>
+						<p style="font-size: 34px; color: #ffa700">Static Properties</p>
+						<pre style="width: 105%;">
+							<code style="max-height: 450px;">
+class Grid {
+	static origin = {x: 0, y: 0};
+	calculateDistanceFromOrigin(point: {x: number; y: number;}) {
+		let xDist = (point.x - Grid.origin.x);
+		let yDist = (point.y - Grid.origin.y);
+		return Math.sqrt(xDist * xDist + yDist * yDist)/this.scale;
+	}
+	constructor (public scale: number) { }
+}
+
+let grid1 = new Grid(1.0);  // 1x scale
+let grid2 = new Grid(5.0);  // 5x scale
+console.log(grid1.calculateDistanceFromOrigin({x: 10, y: 10}));
+console.log(grid2.calculateDistanceFromOrigin({x: 10, y: 10}));
+							</code>
+						</pre>
+					</section>
+					<section>
+						<p style="font-size: 34px; color: #ffa700">Abstract Classes</p>
+						<pre>
+							<code>
+abstract class Animal {
+	abstract makeSound(): void;
+	move(): void {
+		console.log("roaming the earth...");
+	}
+}
+							</code>
+						</pre>
+					</section>
+				</section>
+				<section>
+					<h2>Read More about TypeScript:</h2>
+					<ul>
+						<li>
+							<a href="https://www.typescriptlang.org/docs/home.html" target="_blank">Documentation</a>
+						</li>
+						<li>
+							<a href="https://basarat.gitbooks.io/typescript/docs/types/type-system.html" target="_blank">Type System</a>
+						</li>
+						<li>
+							<a href="https://github.com/microsoft/TypeScript" target="_blank">Source Code (GitHub)</a>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>The End.</h2>
+				</section>
+            </div>
+        </div>
+
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true },
+                ],
+            });
+        </script>
+    </body>
+</html>
